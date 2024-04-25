@@ -1,6 +1,10 @@
 import $ from "./plugins/jquery.min.js";
 
 $(document).ready(function () {
+  setInterval(() => $("body").css("opacity", 1), 500);
+});
+
+$(document).ready(function () {
   $("#nav-menu-mobile").on("click", function () {
     $(".content-nav-mobile").fadeToggle(150);
   });
