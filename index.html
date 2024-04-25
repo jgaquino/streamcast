@@ -4,9 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/animate.css" />
     <title>Streamcast</title>
   </head>
 
@@ -21,7 +18,7 @@
                   <img
                     onclick="location.reload()"
                     width="240"
-                    src="imgs/logo.png"
+                    src="public/logo.png"
                     alt="Stream Cast"
                   />
                 </h1>
@@ -54,7 +51,7 @@
     </section>
 
     <section id="hero">
-      <img id="starts-hero" src="imgs/stars.svg" alt="" />
+      <img id="starts-hero" src="public/stars.svg" alt="" />
       <div class="container">
         <div class="wrap">
           <div class="content">
@@ -67,7 +64,7 @@
 
                   <div class="learn_more animate a2 animate-fadeInDown">
                     <a id="custom-scroll" class="scroll" href="#home-img-hero">
-                      <img src="imgs/learn_more.svg" alt="" />
+                      <img src="public/learn_more.svg" alt="" />
                       <p>Learn more</p>
                     </a>
                   </div>
@@ -75,7 +72,7 @@
               </div>
 
               <div class="img">
-                <img id="home-img-hero" src="imgs/img-hero.svg" alt="" />
+                <img id="home-img-hero" src="public/img-hero.svg" alt="" />
               </div>
             </div>
 
@@ -84,7 +81,7 @@
                 id="second-block-hero"
                 class="col-md-5 animate a1 animate-fadeInLeft"
               >
-                <img src="imgs/img.png" alt="" />
+                <img src="public/people.png" alt="" />
               </div>
               <div class="col-md-5 animate a1 animate-fadeInRight">
                 <h1>Next Generation Content Delivery Network</h1>
@@ -130,7 +127,7 @@
         <div class="wrap">
           <div class="content">
             <div class="first">
-              <img width="669" src="imgs/third-block.png" alt="" />
+              <img width="669" src="public/third-block.png" alt="" />
             </div>
 
             <div class="second">
@@ -198,7 +195,7 @@
 
             <div class="col-md-12 box-icons">
               <div class="col-md-4 animate a0 animate-fadeInUp">
-                <img src="imgs/fifth-one-icon.svg" alt="" />
+                <img src="public/fifth-one-icon.svg" alt="" />
                 <h3>Reseller Partners</h3>
                 <div class="col-md-10 no-padding">
                   <p>
@@ -209,7 +206,7 @@
                 </div>
               </div>
               <div class="col-md-4 animate a1 animate-fadeInUp">
-                <img src="imgs/fifth-second-icon.svg" alt="" />
+                <img src="public/fifth-second-icon.svg" alt="" />
                 <h3>Content Partners</h3>
                 <div class="col-md-10 no-padding">
                   <p>
@@ -219,7 +216,7 @@
                 </div>
               </div>
               <div class="col-md-4 animate a2 animate-fadeInUp">
-                <img src="imgs/fifth-third-icon.svg" alt="" />
+                <img src="public/fifth-third-icon.svg" alt="" />
                 <h3>Business & Referrals</h3>
                 <div class="col-md-10 no-padding">
                   <p>
@@ -292,59 +289,6 @@
       <p>© 2018 Streamcast. All rights reserved.</p>
     </footer>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/built.min.js"></script>
-    <script>
-      //IMG ANIMATION
-      onload = function startAnimation() {
-        var frameHeight = 431;
-        var frames = 49;
-        var frame = 0;
-        var div = document.getElementById("animation-airplane");
-        setInterval(function () {
-          var frameOffset = (++frame % frames) * -frameHeight;
-          div.style.backgroundPosition = "0px " + frameOffset + "px";
-        }, 110);
-      };
-
-      //STARTS ANIMATION
-      var starts = $("#starts-hero");
-
-      var lFollowX = 0,
-        lFollowY = 0,
-        x = 0,
-        y = 0,
-        friction = 1 / 40;
-
-      function moveBackground() {
-        x += (lFollowX - x) * friction;
-        y += (lFollowY - y) * friction;
-
-        translate = "translate(" + x + "px, " + y + "px)";
-
-        starts.css({
-          "-webit-transform": translate,
-          "-moz-transform": translate,
-          transform: translate,
-        });
-
-        window.requestAnimationFrame(moveBackground);
-      }
-
-      $(window).on("mousemove click", function (e) {
-        var lMouseX = Math.max(
-          -300,
-          Math.min(300, $(window).width() / 2 - e.clientX)
-        );
-        var lMouseY = Math.max(
-          -300,
-          Math.min(300, $(window).height() / 2 - e.clientY)
-        );
-        lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
-        lFollowY = (10 * lMouseY) / 100;
-      });
-
-      moveBackground();
-    </script>
+    <script src="dist/bundle.js"></script>
   </body>
 </html>
